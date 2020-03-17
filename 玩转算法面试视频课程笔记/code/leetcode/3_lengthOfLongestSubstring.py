@@ -8,9 +8,9 @@
 
 '''
 
-## 使用滑动窗口
-## 注意python中字符转换为ASCII码要使用ord(),
-# 不能用int(),int()只能将数字字符转换为对应的整数
+## 使用滑动窗口nums[0,k]保存没有重复的字符
+## 注意：python中字符转换为ASCII码要使用ord(),
+## 不能用int(),int()只能将数字字符转换为对应的整数
 def lengthOfLongestSubstring(s):
     l = 0
     r = -1 # s[l,r]范围内保存不重复子串

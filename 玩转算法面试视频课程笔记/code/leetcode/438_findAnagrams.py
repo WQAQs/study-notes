@@ -23,41 +23,34 @@ s: "abab" p: "ab"
 起始索引等于 2 的子串是 "ab", 它是 "ab" 的字母异位词。
 
 '''
-## 1.暴力解法，leetcode超时
-import operator
-def findAnagrams(s,p):
-    def check(subs,p):
-        m = len(subs)
-        n = len(p)
-        if m != n:return False
-        for char in p:
-            if p.count(char) != subs.count(char):
-                return False
-        return True
-    m = len(s)
-    n = len(p)
-    res = []
-    l = 0
-    while l <= m - n:
-        if check(s[l:l+n],p):
-            res.append(l)
-        l += 1
-    return res
+## 1.滑动窗口[l,r]
+from typing import List
+class Solution:
+    @classmethod
+    def findAnagrams(cls, s: str, p: str) -> List[int]:
+        def check_same(freq_s,freq_p):
+            for i in range(26):
+                if freq_p != freq_s:
+                    return False
+            return True
+        res = []
+        l = 0
+        r = -1
+        freq_s=[0 for i in range(26)]
+        freq_p=[0 for i in range(26)]
+        for i in range(len(p)):
+            freq_p[ord(p[i])-ord('a')] += 1
+        while r + 1 < len(s) and len(p) > 0:
+            r += 1
+            freq_s[ord(s[r]) - ord('a')] += 1
+            if r - l + 1 > len(p):
+                freq_s[ord(s[l])-ord('a')] -= 1
+                l += 1
+            if r - l + 1 == len(p) and check_same(freq_s,freq_p):
+                res.append(l)
+        return res
 
 if __name__ == "__main__":
-    res = findAnagrams("cbaebabacd","abc")
+    res = Solution.findAnagrams("cbaebabacd","abc")
     res
-    str = "asdfas"
-    res = str.count("as")
-    res
-    # def check1(subs,p):
-    #     m = len(subs)
-    #     n = len(p)
-    #     if m != n:return False
-    #     freqm = [0 for i in range(256)]
-    #     freqn = [0 for i in range(256)]
-    #     for char in subs:
-    #         freqm[ord(char)] += 1
-    #     for char in p:
-    #         freqn[ord(char)] += 1
-    #     return operator.eq(freqm,freqn)
+

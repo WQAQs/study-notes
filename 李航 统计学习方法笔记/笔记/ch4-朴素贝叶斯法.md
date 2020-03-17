@@ -30,6 +30,8 @@
     P(B_i|A)=\frac{P(B_i)P(A|B_i)}{\sum_{j=1}^{n}{P(B_j)P(A|B_j)}}
     $$
 
+  - 先验分布用beta分布建模，得到的后验分布也是beta分布的，那么称
+
 # markdown公式示例
 
   $$
@@ -97,4 +99,3 @@ $$
 $$
 {\underset {x\in S\subseteq X}{\operatorname {max} }}\,f(x):=\{x\mid x\in S\wedge \forall y\in S:f(y)\leq f(x)\}.
 $$
-

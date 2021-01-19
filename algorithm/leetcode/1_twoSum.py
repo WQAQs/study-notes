@@ -10,15 +10,21 @@
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
 '''
+from typing import List
 
 ## 使用dict查找表
 ## 时间复杂度：O（n）
 ## 空间复杂度：O（n）
-def twoSum(self, nums: List[int], target: int) -> List[int]:
+def twoSum(nums: List[int], target: int) -> List[int]:
     dict = {}
     for i in range(len(nums)):
         if dict.get(target - nums[i]) != None:
             return [dict.get(target - nums[i]),i]
         dict[nums[i]] = i
     return 0
-     
+
+if __name__ == "__main__":
+    nums = [2, 7, 11, 15]
+    target = 9
+    res = twoSum(nums, target)
+    print(res)

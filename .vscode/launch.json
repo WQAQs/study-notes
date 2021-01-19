@@ -4,8 +4,62 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    {"name":"Python: 当前文件","type":"python","request":"launch","program":"${file}","console":"integratedTerminal"},
-    
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - string_array_test",
+            "request": "launch",
+            "mainClass": "string_array_test",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - array_copy_test",
+            "request": "launch",
+            "mainClass": "array_copy_test",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - pathSum_offer_34",
+            "request": "launch",
+            "mainClass": "pathSum_offer_34",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - kthLargest_offer_54",
+            "request": "launch",
+            "mainClass": "kthLargest_offer_54",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - treeToDoublyList_offer36",
+            "request": "launch",
+            "mainClass": "treeToDoublyList_offer36",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - serialize_and_deserialize_297",
+            "request": "launch",
+            "mainClass": "serialize_and_deserialize_297",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - grammar_test",
+            "request": "launch",
+            "mainClass": "grammar_test",
+            "projectName": "stydy-notes_4b3072a3"
+        },
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
         {
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",

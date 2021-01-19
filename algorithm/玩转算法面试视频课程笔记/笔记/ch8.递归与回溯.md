@@ -30,6 +30,3 @@
             51、N-Queens
             52、N-Queens II
             37、Sudoku Solver
-
-
-  
